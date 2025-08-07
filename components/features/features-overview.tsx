@@ -162,7 +162,7 @@ export function FeaturesOverview() {
                         >
                             <CardContent className="p-6">
                                 <div className="flex items-center gap-2 mb-4">
-                                    <div className="p-2 rounded-full bg-secondary-100/80 text-pink-500">{feature.icon}</div>
+                                    <div className="p-2 rounded-full bg-pink-100 text-pink-500">{feature.icon}</div>
                                     <h3 className="text-base font-semibold">{feature.title}</h3>
                                 </div>
                                 <p className="font-normal text-medium text-default-500">{feature.description}</p>

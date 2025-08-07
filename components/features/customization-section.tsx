@@ -6,7 +6,7 @@ export function CustomizationSection() {
             <div className="flex flex-col gap-8">
                 <div>
                     <div className="flex-col gap-2 items-start justify-center w-full inline md:block">
-                        <h1 className="tracking-tight inline font-semibold text-4xl lg:text-6xl">Customization made</h1>
+                        <h1 className="tracking-tight inline font-semibold text-4xl lg:text-6xl">Replication made</h1>
                         <div>
                             <h1 className="tracking-tight inline font-semibold bg-gradient-to-b from-[#FF72E1] to-[#F54C7A] text-4xl lg:text-6xl bg-clip-text text-transparent">
                                 easy.
