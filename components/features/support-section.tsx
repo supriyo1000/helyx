@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image"
 
 export function SupportSection() {
     return (
@@ -75,7 +76,7 @@ export function SupportSection() {
                     </Card>
                 </div>
 
-                <div className="relative mt-32 md:mt-60 w-full flex items-center justify-center">
+                {/* <div className="relative mt-32 md:mt-60 w-full flex items-center justify-center">
                     <div className="relative inline-block">
                         <div className="relative flex items-center justify-center text-center rounded-full bg-transparent w-20 h-20">
                             <Button
@@ -87,10 +88,11 @@ export function SupportSection() {
                                     <path d="M6 12h12" strokeLinecap="round" strokeLinejoin="round" />
                                     <path d="M12 18V6" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
+                                Helyx
                             </Button>
                         </div>
 
-                        {/* Sponsor Avatars */}
+                        Sponsor Avatars
                         <div className="absolute rounded-full bg-transparent w-32 h-32 top-[-24px] left-[-24px]">
                             {Array.from({ length: 20 }).map((_, i) => {
                                 const angle = (i / 20) * 2 * Math.PI
@@ -110,13 +112,30 @@ export function SupportSection() {
                                     >
                                         <div className="w-full h-full rounded-full bg-white/10 backdrop-blur-md backdrop-saturate-200 flex items-center justify-center text-xs font-semibold text-white">
                                             {String.fromCharCode(65 + (i % 26))}
+                                            {
+                                                i < 13 ?
+
+                                                    <Image
+                                                        src={`/sponsors/sp${i}.jpg`}
+                                                        width={32}
+                                                        height={32}
+                                                        alt={`Sponsor ${i + 1}`}
+                                                    />
+                                                    :
+                                                    <Image
+                                                        src={`/sponsors/sp${i}.svg`}
+                                                        width={32}
+                                                        height={32}
+                                                        alt={`Sponsor ${i + 1}`}
+                                                    />
+                                            }
                                         </div>
                                     </div>
                                 )
                             })}
                         </div>
 
-                        {/* Animated Rings */}
+                        Animated Rings
                         <div className="absolute top-1/2 left-1/2 overflow-visible -z-10">
                             {[120, 200, 280, 360].map((size, index) => (
                                 <div
@@ -130,6 +149,72 @@ export function SupportSection() {
                                         borderColor: `rgba(121, 40, 202, ${0.4 - index * 0.1})`,
                                         background: `linear-gradient(-180deg, rgba(121,40,202,${0.4 - index * 0.1}) 40%, hsl(var(--background)) 100%)`,
                                         animationDelay: `${index * 0.5}s`,
+                                    }}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div> */}
+
+                <div className="relative mt-32 md:mt-60 w-full flex items-center justify-center">
+                    <div className="relative inline-block">
+                        {/* Central Button */}
+                        <div className="relative flex items-center justify-center text-center rounded-full bg-transparent w-20 h-20">
+                            <Button
+                                size="lg"
+                                className="rounded-full bg-gradient-to-b from-[#FF1CF7] to-[#7928CA] text-white p-4 hover:scale-110 transition-transform"
+                                aria-label="Become a sponsor"
+                            >
+                                Helyx
+                            </Button>
+                        </div>
+
+                        {/* Sponsor Avatars */}
+                        <div className="absolute rounded-full bg-transparent w-20 h-20 top-[-24px] left-[-24px]">
+                            {Array.from({ length: 19 }).map((_, i) => {
+                                const angle = (i / 19) * 2 * Math.PI;
+                                const radius = 160;
+                                const x = Math.cos(angle) * radius + 65;
+                                const y = Math.sin(angle) * radius + 65;
+
+                                return (
+                                    <div
+                                        key={i}
+                                        className="absolute w-15 h-15 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 border-2 border-background cursor-pointer hover:scale-110 transition-transform"
+                                        style={{
+                                            left: `${x}px`,
+                                            top: `${y}px`,
+                                            transform: 'translate(-50%, -50%)',
+                                        }}
+                                    >
+                                        <div className="w-full h-full rounded-full bg-white/10 backdrop-blur-md backdrop-saturate-200 flex items-center justify-center text-xs font-semibold text-white border-2 border-black">
+                                            <Image
+                                                src={`/sponsors/sp${i+1}.${i < 13 ? 'jpg' : 'svg'}`}
+                                                width={100}
+                                                height={50}
+                                                alt={`Sponsor ${i + 1}`}
+                                                className="rounded-full object-cover"
+                                            />
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+
+                        {/* Animated Rings */}
+                        <div className="absolute top-1/2 left-1/2 overflow-visible -z-10">
+                            {[120, 340].map((size, index) => (
+                                <div
+                                    key={index}
+                                    className="absolute animate-pulse rounded-full border opacity-30"
+                                    style={{
+                                        width: `${size}px`,
+                                        height: `${size}px`,
+                                        top: `-${size / 2}px`,
+                                        left: `-${size / 2}px`,
+                                        borderColor: `rgba(121, 40, 202, ${0.4 - index * 0.1})`,
+                                        background: `linear-gradient(180deg, rgba(121,40,202,${0.4 - index * 0.1})`,
+                                        animationDelay: `${index * 5}s`,
                                     }}
                                 />
                             ))}

@@ -37,7 +37,7 @@ export function CommunitySection() {
     ]
 
     return (
-        <section className="relative z-10 gap-2 w-full flex flex-col items-center mt-16 lg:mt-44">
+        <section className="relative z-10 gap-2 w-full flex flex-col items-center mt-26 lg:mt-44">
             <div className="max-w-4xl flex flex-col gap-8">
                 <div>
                     <div className="flex flex-col gap-2 justify-center w-full items-center">
@@ -54,8 +54,7 @@ export function CommunitySection() {
                     {communities.map((community, index) => (
                         <Card
                             key={index}
-                            className="border-transparent bg-white/5 dark:bg-default-400/10 backdrop-blur-lg backdrop-saturate-[1.8] cursor-pointer hover:scale-[0.97] transition-transform"
-                        >
+                            className="border-transparent bg-white/5 dark:bg-default-400/10 backdrop-blur-lg backdrop-saturate-[1.8] cursor-pointer hover:scale-[0.97] transition-transform shadow-md/30 hover:shadow-xl rounded-lg">
                             <CardContent className="p-6">
                                 <div className="flex items-center justify-between mb-4">
                                     <div className="flex items-center gap-2">

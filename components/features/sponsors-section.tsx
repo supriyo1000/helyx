@@ -1,12 +1,14 @@
 // import { Button } from "@/components/ui/button"
 
+import Link from "next/link";
+
 export function SponsorsSection() {
     return (
         <section className="relative z-10 flex flex-col gap-2 w-full text-center mt-24 lg:mt-32">
             <h3 className="text-large text-default-500">Supported and backed by</h3>
             <div className="w-full flex flex-wrap gap-x-5 gap-y-3 justify-center items-center">
-                <a
-                    href="https://story.to.design"
+                <Link
+                    href="https://quobotic.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex flex-col items-center justify-center hover:opacity-70 transition-opacity"
@@ -14,16 +16,16 @@ export function SponsorsSection() {
                     <div className="text-2xl font-bold bg-linear-to-r from-pink-600 to-violet-700 bg-clip-text font-extrabold text-transparent">
                         Quobotic Consulting
                     </div>
-                </a>
+                </Link>
 
-                <a
-                    href="https://coderabbit.ai"
+                <Link
+                    href="https://shop.cookme.in/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex flex-col items-center justify-center hover:opacity-70 transition-opacity"
                 >
                     <div className="text-2xl font-bold text-red-800">Cookme Spices</div>
-                </a>
+                </Link>
 
                 {/* <Button variant="outline" size="sm" className="border-dashed bg-transparent hover:bg-default-100/50" asChild>
                     <a href="https://patreon.com/jrgarciadev" target="_blank" rel="noopener noreferrer">
