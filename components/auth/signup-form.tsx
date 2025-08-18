@@ -136,7 +136,7 @@ export function SignupForm() {
 
   return (
     <Card className="border border-gray-200 shadow-lg">
-      <CardContent className="p-6">
+      <CardContent className="px-6 py-2">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
             <label htmlFor="name" className="text-sm font-medium text-gray-700">

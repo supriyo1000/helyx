@@ -25,17 +25,17 @@ export default function Home() {
       {/* Top Banner */}
       <div className="relative z-50 isolate flex items-center gap-x-6 overflow-hidden bg-white border-b border-gray-200 px-6 py-2.5 sm:px-3.5">
         <div className="flex w-full items-center justify-between md:justify-center gap-x-3">
-          <a
+          {/* <a
             className="text-sm flex items-center sm:text-[0.93rem] text-gray-900 hover:opacity-80 transition-opacity"
             href="https://heroui.chat"
             target="_blank"
             rel="noopener noreferrer"
-          >
+          > */}
             <span className="mr-1" role="img" aria-label="rocket">
               🚀
             </span>
             <span className="font-medium">One Engine. Many Databases. Real-Time-Replication.</span>
-          </a>
+          {/* </a> */}
 
         </div>
       </div>
