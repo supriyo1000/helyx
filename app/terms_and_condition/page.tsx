@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Navigation } from "@/components/features/navigation";
+import Navigation from "@/components/features/navigation";
+// import TestNavigation from "@/components/test";
 
 export default function TermsPage() {
 
@@ -334,11 +335,28 @@ export default function TermsPage() {
 
     return (
         <div className="scroll-smooth bg-gradient-to-br from-blue-50 to-white min-h-screen">
+            <div className="relative z-50 isolate flex items-center gap-x-6 overflow-hidden bg-white border-b border-gray-200 px-6 py-2.5 sm:px-3.5">
+                <div className="flex w-full items-center justify-between md:justify-center gap-x-3">
+                    <a
+                        className="text-sm flex items-center sm:text-[0.93rem] text-gray-900 hover:opacity-80 transition-opacity"
+                        href="https://heroui.chat"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="mr-1" role="img" aria-label="rocket">
+                            🚀
+                        </span>
+                        <span className="font-medium">One Engine. Many Databases. Real-Time-Replication.</span>
+                    </a>
+
+                </div>
+            </div>
             <Navigation/>
+            {/* <TestNavigation/> */}
             <header className="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-14 shadow-lg">
                 <div className="max-w-4xl mx-auto px-4 text-center">
-                    <h1 className="text-5xl font-bold tracking-tight mb-3">Terms & Conditions</h1>
-                    <p className="text-blue-100 text-lg">Please read these terms carefully before using our software or website.</p>
+                    <h1 className="text-2xl lg:text-5xl font-bold tracking-tight mb-3">Terms & Conditions</h1>
+                    <p className="text-blue-100 text-sm lg:text-lg">Please read these terms carefully before using our software or website.</p>
                 </div>
             </header>
 
@@ -367,15 +385,15 @@ export default function TermsPage() {
 
                         {termsContent.slice(0, -1).map((sec) => (
                             <section id={sec.id} key={sec.id} className="mb-8 border-l-4 border-blue-500 pl-4">
-                                <h2 className="text-2xl font-semibold text-blue-700 mb-3">{sec.title}</h2>
-                                <div>{sec.content}</div>
+                                <h2 className="text-lg lg:text-2xl font-semibold text-blue-700 mb-3">{sec.title}</h2>
+                                <div className="text-sm lg:text-md">{sec.content}</div>
                             </section>
                         ))}
                     </motion.div>
 
                     {/* Trial special card */}
                     <motion.div id={termsContent[termsContent.length - 1].id} className="bg-gradient-to-br from-yellow-50 to-white shadow-lg rounded-2xl p-8 border border-yellow-200" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
-                        <h2 className="text-2xl font-semibold text-yellow-800 mb-4">{termsContent[termsContent.length - 1].title}</h2>
+                        <h2 className="text-sm lg:text-2xl font-semibold text-yellow-800 mb-4">{termsContent[termsContent.length - 1].title}</h2>
                         <div>{termsContent[termsContent.length - 1].content}</div>
                     </motion.div>
                 </main>

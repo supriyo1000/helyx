@@ -200,7 +200,7 @@ export function FeaturesGrid() {
     }, [isHovering]);
 
     return (
-        <div className="overflow-x-hidden" ref={scrollRef}>
+        <div className="overflow-x-hidden mb-10" ref={scrollRef}>
 
             {/* Arrows */}
             {/* <button
@@ -218,16 +218,16 @@ export function FeaturesGrid() {
                 <FaCaretRight />
             </button> */}
 
-            <div className="flex gap-6 px-4 py-2 w-max">
+            <div className="flex gap-4 h-full lg:gap-6 px-2 py-5 lg:px-4 lg:py-6 w-max">
                 {features.map((feature, index) => (
                     <Card
                         key={index}
-                        className="min-w-[280px] max-w-xs flex-shrink-0 border border-gray-350 shadow-xl bg-white hover:shadow-xl/30 transition-shadow duration-200 cursor-default"
+                        className="min-w-[280px] max-w-xs flex-shrink-0 border border-gray-350 shadow-lg lg:shadow-xl bg-white hover:shadow-xl/30 transition-shadow duration-200 cursor-default"
                         onMouseEnter={() => setIsHovering(true)}
                         onMouseLeave={() => setIsHovering(false)}
                     >
-                        <CardContent className="p-6">
-                            <div className="flex items-center gap-3 mb-4">
+                        <CardContent className="px-3 lg:p-6">
+                            <div className="flex items-center gap-3 mb-2 lg:mb-4">
                                 <div className={`p-2 rounded-lg ${feature.bgColor} ${feature.color}`}>
                                     {feature.icon}
                                 </div>
