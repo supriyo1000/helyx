@@ -6,59 +6,52 @@ import { HeroSection } from "@/components/features/hero-section"
 import { FeaturesGrid } from "@/components/features/features-grid"
 import { SponsorsSection } from "@/components/features/sponsors-section"
 // import TestNavigation from "@/components/test"
-// import { CustomThemesSection } from "@/components/features/custom-themes-section"
 // import { AccessibilitySection } from "@/components/features/accessibility-section"
 // import { DarkModeSection } from "@/components/features/dark-mode-section"
 // import { CustomizationSection } from "@/components/features/customization-section"
 // import { HeroUIProSection } from "@/components/features/heroui-pro-section"
-// import { FeaturesOverview } from "@/components/features/features-overview"
+import { FeaturesOverview } from "@/components/features/features-overview"
 // import { SupportSection } from "@/components/features/support-section"
-// import { CommunitySection } from "@/components/features/community-section"
+import { CommunitySection } from "@/components/features/community-section"
 // import { InstallBanner } from "@/components/features/install-banner"
 import { Footer } from "@/components/features/footer"
-import Navigation from "@/components/features/navigation"
+// import Navigation from "@/components/features/navigation"
+import TopBanner from "@/components/features/TopBanner"
+import { KeyFeaturesSection } from "@/components/features/keyfeatures-section"
+import Demo from "@/components/features/Demo"
+import NavigationLatest from "@/components/features/navigationlatest"
+// import YoutubeVideo from "@/components/features/youtube-section"
 
 export default function Home() {
-  
   return (
     <div className="min-h-screen bg-white font-sans antialiased overflow-x-hidden">
       {/* Top Banner */}
-      <div className="relative z-50 isolate flex items-center gap-x-6 overflow-hidden bg-white border-b border-gray-200 px-6 py-2.5 sm:px-3.5">
-        <div className="flex w-full items-center justify-between md:justify-center gap-x-3">
-          {/* <a
-            className="text-sm flex items-center sm:text-[0.93rem] text-gray-900 hover:opacity-80 transition-opacity"
-            href="https://heroui.chat"
-            target="_blank"
-            rel="noopener noreferrer"
-          > */}
-            <span className="mr-1" role="img" aria-label="rocket">
-              🚀
-            </span>
-            <span className="font-medium">One Engine. Many Databases. Real-Time-Replication.</span>
-          {/* </a> */}
+      
+      <TopBanner/>
 
-        </div>
-      </div>
-      <Navigation/>
-      {/* <TestNavigation /> */}
+      {/* <Navigation/> */}
+      <NavigationLatest/>
 
       <main className="container mx-auto max-w-7xl px-6 grow">
         <HeroSection />
         <div className="container mx-auto max-w-7xl px-6 mt-16">
           <FeaturesGrid />
-          <SponsorsSection />
+          <KeyFeaturesSection />
+          {/* <YoutubeVideo/> */}
           {/* <CustomThemesSection /> */}
           {/* <AccessibilitySection /> */}
           {/* <DarkModeSection /> */}
           {/* <CustomizationSection /> */}
           {/* <HeroUIProSection /> */}
-          {/* <FeaturesOverview /> */}
+          <FeaturesOverview />
           {/* <SupportSection /> */}
           {/* <InstallBanner /> */}
-          {/* <CommunitySection /> */}
+          <SponsorsSection />
+          <CommunitySection />
         </div>
       </main>
 
+      <Demo/>
       <Footer />
     </div>
   )

@@ -200,7 +200,7 @@ export function FeaturesGrid() {
     }, [isHovering]);
 
     return (
-        <div className="overflow-x-hidden mb-10" ref={scrollRef}>
+        <div className="overflow-x-hidden mb-10 lg:px-8" ref={scrollRef}>
 
             {/* Arrows */}
             {/* <button

@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { z } from "zod"
 import { AuthService } from "@/lib/services/authService"
-import { validateCompanyEmail } from "@/lib/utils/emailValidation"
+// import { validateCompanyEmail } from "@/lib/utils/emailValidation"
 
 const signupSchema = z
     .object({
@@ -24,18 +24,20 @@ export async function POST(request: NextRequest) {
     try {
         const body = await request.json()
         const { name, email, password } = signupSchema.parse(body)
+        console.log("name, email, password", name, email, password);
+        
 
         // Validate company email
-        const emailValidation = validateCompanyEmail(email)
-        if (!emailValidation.isValid) {
-            return NextResponse.json(
-                {
-                    message: emailValidation.error || "Invalid email address",
-                    statusCode: 400,
-                },
-                { status: 400 },
-            )
-        }
+        // const emailValidation = validateCompanyEmail(email)
+        // if (!emailValidation.isValid) {
+        //     return NextResponse.json(
+        //         {
+        //             message: emailValidation.error || "Invalid email address",
+        //             statusCode: 400,
+        //         },
+        //         { status: 400 },
+        //     )
+        // }
 
         const result = await AuthService.createUser({
             name,
@@ -66,7 +68,7 @@ export async function POST(request: NextRequest) {
             return NextResponse.json(
                 {
                     message: "Validation error",
-                    errors: error.flatten().fieldErrors,
+                    errors: z.treeifyError(error),
                     statusCode: 400,
                 },
                 { status: 400 },

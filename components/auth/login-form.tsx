@@ -8,8 +8,9 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { Eye, EyeOff, Mail, Lock, AlertCircle } from "lucide-react"
 import { useLoginMutation } from "@/lib/api/authApi"
-import { validateCompanyEmail, getCompanyEmailSuggestion } from "@/lib/utils/emailValidation"
+import {  getCompanyEmailSuggestion } from "@/lib/utils/emailValidation"
 import { toast } from "sonner"
+import Link from "next/link"
 
 interface LoginError {
   data?: {
@@ -36,24 +37,24 @@ export function LoginForm() {
     setEmailError(null)
 
     // Validate email if it's not empty
-    if (email.trim()) {
-      const validation = validateCompanyEmail(email)
-      if (!validation.isValid) {
-        setEmailError(validation.error || "Invalid email address")
-      }
-    }
+    // if (email.trim()) {
+    //   const validation = validateCompanyEmail(email)
+    //   if (!validation.isValid) {
+    //     setEmailError(validation.error || "Invalid email address")
+    //   }
+    // }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     // Validate email before submission
-    const emailValidation = validateCompanyEmail(formData.email)
-    if (!emailValidation.isValid) {
-      setEmailError(emailValidation.error || "Invalid email address")
-      toast.error(emailValidation.error || "Invalid email address")
-      return
-    }
+    // const emailValidation = validateCompanyEmail(formData.email)
+    // if (!emailValidation.isValid) {
+    //   setEmailError(emailValidation.error || "Invalid email address")
+    //   toast.error(emailValidation.error || "Invalid email address")
+    //   return
+    // }
 
     try {
       await login(formData).unwrap()
@@ -268,9 +269,9 @@ export function LoginForm() {
         <div className="mt-4 text-center">
           <p className="text-sm text-gray-600">
             Dont have an account?{" "}
-            <a href="/auth/signup" className="text-blue-600 hover:text-blue-500 font-medium transition-colors">
-              Sign up here
-            </a>
+            <Link href="/auth/signup" className="text-blue-600 hover:text-blue-500 font-medium transition-colors">
+              Sign up
+            </Link>
           </p>
         </div>
       </CardContent>

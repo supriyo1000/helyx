@@ -81,7 +81,7 @@ export function HeroUIProSection() {
                     </div>
                 </div>
 
-                <div className="overflow-hidden">
+                {/* <div className="overflow-hidden">
                     <div className="hidden md:flex w-screen mt-4 md:absolute md:inset-0 isolate md:max-h-dvh">
                         <div className="flex w-max items-stretch gap-4 flex-col h-full animate-scroll">
                             <div className="w-full h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg opacity-50" />
@@ -97,7 +97,7 @@ export function HeroUIProSection() {
                     <div className="absolute hidden md:block md:inset-0 md:pointer-events-none md:top-0 md:z-20">
                         <div className="h-full w-full bg-[radial-gradient(at_80%_50%,_rgba(255,255,255,_0)_20%,_rgba(0,0,0,_0.8)_40%,_rgba(0,0,0,1)_100%)]" />
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     )

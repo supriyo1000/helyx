@@ -1,6 +1,7 @@
 import { LoginForm } from "@/components/auth/login-form"
 import type { Metadata } from "next"
 import Image from "next/image"
+import Link from "next/link"
 
 export const metadata: Metadata = {
     title: "Login - Helyx",
@@ -13,12 +14,14 @@ export default function LoginPage() {
             <div className="w-full max-w-md">
                 <div className="text-center mb-8">
                     <div className="flex justify-center mb-4">
-                        <Image
-                            src={"/logo.jpeg"}
-                            width={100}
-                            height={80}
-                            alt="helyx"
-                        />
+                        <Link href={"/"}>
+                            <Image
+                                src={"/logo.jpeg"}
+                                width={100}
+                                height={80}
+                                alt="helyx"
+                            />
+                        </Link>
                     </div>
                     <h1 className="text-3xl font-bold text-gray-900">Welcome back</h1>
                     <p className="text-gray-600 mt-2">Sign in to your Helyx account</p>
@@ -26,14 +29,14 @@ export default function LoginPage() {
 
                 <LoginForm />
 
-                <div className="mt-6 text-center">
+                {/* <div className="mt-6 text-center">
                     <p className="text-sm text-gray-600">
                         Don&apos;t have an account?{" "}
                         <a href="/auth/signup" className="font-medium text-blue-600 hover:text-blue-500 transition-colors">
                             Sign up
                         </a>
                     </p>
-                </div>
+                </div> */}
             </div>
         </div>
     )

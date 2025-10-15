@@ -1,10 +1,12 @@
+// app\terms_and_condition\page.tsx
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import Navigation from "@/components/features/navigation";
+// import Navigation from "@/components/features/navigation";
+import NavigationLatest from "@/components/features/navigationlatest";
 // import TestNavigation from "@/components/test";
 
-export default function TermsPage() {
+export default function TermsClient() {
 
     const date: Date = new Date(); // TypeScript infers `Date`
 
@@ -309,7 +311,7 @@ export default function TermsPage() {
                         </ul>
 
                         <p className="text-gray-700 leading-relaxed mt-3">Term & Expiry:</p>
-                        <p className="text-gray-700 leading-relaxed mt-1">The Trial License is valid for [X] days from the date of activation (the “Trial Period&quot;). Upon expiry, the Software will automatically disable or require activation of a paid license. You must uninstall and delete all copies of the Software at the end of the Trial Period unless you purchase a full license.</p>
+                        <p className="text-gray-700 leading-relaxed mt-1">The Trial License is valid for 30 days from the date of activation (the “Trial Period&quot;). Upon expiry, the Software will automatically disable or require activation of a paid license. You must uninstall and delete all copies of the Software at the end of the Trial Period unless you purchase a full license.</p>
 
                         <p className="text-gray-700 leading-relaxed mt-3">Restrictions:</p>
                         <ul className="list-disc list-inside text-gray-700 leading-relaxed space-y-2 mt-2">
@@ -351,7 +353,7 @@ export default function TermsPage() {
 
                 </div>
             </div>
-            <Navigation/>
+            <NavigationLatest/>
             {/* <TestNavigation/> */}
             <header className="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-14 shadow-lg">
                 <div className="max-w-4xl mx-auto px-4 text-center">

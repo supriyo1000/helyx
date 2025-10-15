@@ -194,7 +194,7 @@ export class AuthService {
                 throw ErrorFactory.authentication("Invalid credentials", "INVALID_CREDENTIALS")
             }
 
-            console.log("✅ User found:", { id: userResult.user_id, email })
+            console.log("✅ User found:", { id: userResult.user_id, email})
 
             // Check if account is locked
             if (userResult.locked_until && new Date(userResult.locked_until) > new Date()) {

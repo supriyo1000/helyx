@@ -1,3 +1,4 @@
+// D: \Helyx_website\helyx2\lib\database\connection.tsx
 import mysql from "mysql2/promise"
 import type { RowDataPacket } from "mysql2/promise"
 import { DatabaseError } from "../types/errors"
@@ -151,43 +152,6 @@ export async function executeTransaction<T>(callback: (connection: mysql.Connect
         throw new DatabaseError("Transaction failed", "TRANSACTION_ERROR", 500, dbError.sqlState, dbError.errno)
     } finally {
         connection.release()
-    }
-}
-
-// Health check
-export async function healthCheck(): Promise<{
-    status: "healthy" | "unhealthy"
-    connections: {
-        total: number
-        active: number
-        idle: number
-    }
-    uptime: number
-}> {
-    try {
-        const startTime = Date.now()
-        await executeQuery("SELECT 1 as health_check")
-        const responseTime = Date.now() - startTime
-
-        return {
-            status: "healthy",
-            connections: {
-                total: pool.pool.config.connectionLimit,
-                active: pool.pool.allConnections.length - pool.pool.freeConnections.length,
-                idle: pool.pool.freeConnections.length,
-            },
-            uptime: responseTime,
-        }
-    } catch {
-        return {
-            status: "unhealthy",
-            connections: {
-                total: 0,
-                active: 0,
-                idle: 0,
-            },
-            uptime: 0,
-        }
     }
 }
 

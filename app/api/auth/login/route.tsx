@@ -1,10 +1,10 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { z } from "zod"
 import { AuthService } from "@/lib/services/authService"
-import { validateCompanyEmail } from "@/lib/utils/emailValidation"
+// import { validateCompanyEmail } from "@/lib/utils/emailValidation"
 
 const loginSchema = z.object({
-    email: z.string().email("Invalid email format"),
+    email: z.email("Invalid email format"),
     password: z.string().min(1, "Password is required"),
     rememberMe: z.boolean().optional().default(false),
 })
@@ -15,16 +15,16 @@ export async function POST(request: NextRequest) {
         const { email, password, rememberMe } = loginSchema.parse(body)
 
         // Validate company email
-        const emailValidation = validateCompanyEmail(email)
-        if (!emailValidation.isValid) {
-            return NextResponse.json(
-                {
-                    message: emailValidation.error || "Invalid email address",
-                    statusCode: 400,
-                },
-                { status: 400 },
-            )
-        }
+        // const emailValidation = validateCompanyEmail(email)
+        // if (!emailValidation.isValid) {
+        //     return NextResponse.json(
+        //         {
+        //             message: emailValidation.error || "Invalid email address",
+        //             statusCode: 400,
+        //         },
+        //         { status: 400 },
+        //     )
+        // }
 
         // Get client IP and user agent
         const ipAddress = request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip") || "unknown"

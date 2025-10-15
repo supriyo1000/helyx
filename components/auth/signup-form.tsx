@@ -10,6 +10,7 @@ import { Eye, EyeOff, Mail, Lock, User, AlertCircle, CheckCircle } from "lucide-
 import { useSignupMutation } from "@/lib/api/authApi"
 import { validateCompanyEmail, getCompanyEmailSuggestion } from "@/lib/utils/emailValidation"
 import { toast } from "sonner"
+import Link from "next/link"
 
 interface SignupError {
   data?: {
@@ -295,13 +296,9 @@ export function SignupForm() {
             />
             <label htmlFor="acceptTerms" className="text-sm text-gray-600">
               I agree to the{" "}
-              <a href="/terms" className="text-blue-600 hover:text-blue-500 transition-colors">
-                Terms of Service
-              </a>{" "}
-              and{" "}
-              <a href="/privacy" className="text-blue-600 hover:text-blue-500 transition-colors">
-                Privacy Policy
-              </a>
+              <Link href="/terms_and_condition" className="text-blue-600 hover:text-blue-500 transition-colors">
+                Terms and Conditions
+              </Link>
             </label>
           </div>
 
@@ -386,6 +383,16 @@ export function SignupForm() {
             </div>
           </div>
         </div>
+
+        {/* Login link */}
+                {/* <div className="mt-4 text-center">
+                  <p className="text-sm text-gray-600">
+                    Already have an account?{" "}
+                    <Link href="/auth/signup" className="text-blue-600 hover:text-blue-500 font-medium transition-colors">
+                      Log in
+                    </Link>
+                  </p>
+                </div> */}
       </CardContent>
     </Card>
   )
